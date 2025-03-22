@@ -21,6 +21,18 @@ function setup() {
     });
 }
 
+window.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById("backgroundMusic");
+  // Intenta quitar mute después de un breve tiempo (esto a veces engaña al navegador)
+  setTimeout(() => {
+    audio.muted = false;
+    audio.play().catch((e) => {
+      console.warn("Autoplay blocked. User interaction needed.");
+    });
+  }, 500);
+});
+
+
 function draw() {
     background(240, 248, 234);
 
