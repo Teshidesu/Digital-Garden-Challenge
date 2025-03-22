@@ -21,17 +21,19 @@ function setup() {
     });
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  const audio = document.getElementById("backgroundMusic");
-  // Intenta quitar mute después de un breve tiempo (esto a veces engaña al navegador)
-  setTimeout(() => {
-    audio.muted = false;
-    audio.play().catch((e) => {
-      console.warn("Autoplay blocked. User interaction needed.");
-    });
-  }, 500);
-});
-
+window.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("backgroundMusic");
+  
+    // Intenta reproducir el audio cada 2 segundos si está pausado
+    setInterval(() => {
+      if (audio.paused) {
+        audio.play().catch(err => {
+          console.warn("Audio blocked by browser:", err);
+        });
+      }
+    }, 2000); // cada 2 segundos verifica que siga sonando
+  });
+  
 
 function draw() {
     background(240, 248, 234);
