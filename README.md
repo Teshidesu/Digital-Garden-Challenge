@@ -1,25 +1,51 @@
-## 🌱 Digital Garden Challenge
+# 🌱 Digital Garden Challenge
 
-Welcome to my Digital Garden project for the Codédex Monthly Challenge! 🎉 This project is built using HTML, CSS, and JavaScript and represents my unique interpretation of a "digital garden".
+Welcome to my **Digital Garden** project for the **Codédex Monthly Challenge**! 🎉  
+This project is built using HTML, CSS, and JavaScript, and represents my unique interpretation of a *digital garden*.
+
+---
 
 ## 🌿 Project Overview
 
-As spring approaches, I wanted to create a digital space that celebrates new beginnings and creativity. My project is a [describe your project briefly, e.g., an interactive plant watering reminder, a field of blooming flowers, a virtual Zen garden, etc.].
+As spring approaches, I wanted to create a digital space that celebrates new beginnings, mindfulness, and creativity.  
+My project is an **interactive pixel-art garden** where users can type a word and "plant" it — watching it bloom into a unique flower. Each word is tied to a specific plant species, and the background includes relaxing visual and ambient elements for a peaceful experience.
 
-### 📚 Technologies Used
+> It's a tiny pocket garden you grow with words 💬🌸
 
-- HTML5 – Structure
-- CSS3 – Styling and animations
-- JavaScript (p5.js/Three.js/Vanilla JS) – Interactivity
-[Any additional libraries or frameworks]
+---
 
-### 🚀 How to Run the Project
+## 🎨 Visual & Audio Assets
 
-```
+All **artwork and visual sprites** were entirely designed and illustrated by me using **Aseprite**, including:
+
+- Custom pixel-art flowers and plants
+- Animated decorative elements like falling leaves and pond visuals
+- Soil textures and grid tiles for planting areas
+- User interface icons and supporting visuals
+
+### 🔊 Audio
+
+- **Nature ambience** was sourced from [FreeSound.org](https://freesound.org)  
+- **License**: CC0 – Free for personal and commercial use  
+- Looping ambient sounds are used to create a relaxing garden atmosphere
+
+---
+
+## 📚 Technologies Used
+
+- **HTML5** – Structure and layout
+- **CSS3** – Styling, animations, and responsive design
+- **JavaScript (Vanilla + p5.js)** – Interactivity and canvas generation
+- **Aseprite** – Asset creation in pixel art
+- **Custom font**: Pixelify Sans
+
+---
+
+## 🚀 How to Run the Project
+
+Clone the repo and open `index.html` in your browser:
+
+```bash
 git clone https://github.com/Teshidesu/digital-garden.git
 cd digital-garden
-```
-
-## 🏆 Challenge Submission
-
-This project is part of the Codédex Monthly Challenge. You can learn more about the challenge here at [Codedex](https://www.codedex.io/community/monthly-challenge/submission/J1I9DOBdAwN4WMWSj5WU) . 
+open index.html
