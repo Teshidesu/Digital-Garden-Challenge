@@ -1,41 +1,92 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    color: #2c5e1a;
-    background-color: #f0f8ea;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
     margin: 0;
-}
-
-/* Center content */
-.container {
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to top, #a9dfbf 60%, #cceeff 100%);
     display: flex;
+    align-items: center;       /* Centrado horizontal */
+    justify-content: flex-start; /* Alineado arriba */
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Styled input field */
-input {
+    position: relative;
+  }
+  
+  
+  .container {
+    position: relative;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    margin-top: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    max-width: 90%;
+    text-align: center;
+  }
+  
+  /* Input */
+  input {
     padding: 12px;
     border-radius: 8px;
     border: 2px solid #2c5e1a;
     font-size: 18px;
     text-align: center;
     outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
-input:focus {
+    transition: 0.3s;
+    margin-top: 10px;
+  }
+  
+  input:focus {
     border-color: #4CAF50;
     box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
-}
-
-/* Status message */
-#statusMessage {
+  }
+  
+  #statusMessage {
     font-size: 14px;
     color: #4CAF50;
-}
+    margin-top: 6px;
+  }
+  
+  /* Todas las imágenes tipo sprite o decorativas */
+  img {
+    image-rendering: pixelated;
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  /* Fondo de hojas animadas */
+  .hojas {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.8;
+  }
+  
+  /* Estanque (agua) */
+  .agua {
+    top: 350px;
+    left: 150px;
+    width: 150px;
+    z-index: 2;
+  }
+  
+  /* Sprite decorativo 1 */
+  .decor1 {
+    bottom: 60px;
+    left: 60px;
+    width: 48px;
+    z-index: 3;
+  }
+  
+  /* Sprite decorativo 2 */
+  .decor2 {
+    bottom: 60px;
+    right: 60px;
+    width: 48px;
+    z-index: 3;
+  }
+  
