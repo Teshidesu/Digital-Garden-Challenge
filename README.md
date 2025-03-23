@@ -49,3 +49,8 @@ Clone the repo and open `index.html` in your browser:
 git clone https://github.com/Teshidesu/digital-garden.git
 cd digital-garden
 open index.html
+```
+
+This project is free of copyright restrictions.
+
+
