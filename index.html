@@ -6,83 +6,73 @@
   <meta name="description" content="A relaxing pixel-art Digital Garden 🌸 — grow your own plants by typing their names and watch your garden bloom with daisy, tulip, rose, and more. Created by Teshi using p5.js.">
   <title>Digital Garden 🌿</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="shortcut icon" href="/assets/image/pot2.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/image/pot2.png" type="image/x-icon">
 </head>
 <body>
-  <!-- Música de fondo -->
+
   <audio id="backgroundMusic" loop>
     <source src="assets/sounds/nature.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-  
 
-  <!-- Fondo animado con hojas -->
-  <img src="assets/image/leaf-falling.gif" class="hojas" alt="Hojas cayendo" />
+  <img src="assets/image/leaf-falling.gif" class="hojas" alt="Falling leaves animation" />
+  <img src="assets/image/rose.png" class="background-pixel" alt="Pixel background" />
 
-  <img src="assets/image/rose.png" class="background-pixel" alt="background pixel" />
-
-<main class="main-layout">
-  <div class="container">
-    <h1>Digital Garden</h1>
-    <p>Type a word and press Enter to grow a new plant.</p>
-    <input type="text" id="wordInput" placeholder="Type here...">
-    <p id="statusMessage"></p>
-  
-    <!-- Esto debe estar aquí dentro -->
-    <div id="hintBox">
-      <p><strong>🌱 Plant options:</strong></p>
-      <ul>
-        <li><code>daisy</code></li>
-        <li><code>rose</code></li>
-        <li><code>sunflower</code></li>
-        <li><code>tomato</code></li>
-        <li><code>carrot</code></li>
-        <li><code>lettuce</code></li>
-        <li><code>corn</code></li>
-        <li><code>watermelon</code></li>
-        <li><code>pumpkin</code></li>
-      </ul>
-    </div>
+  <main class="main-layout">
+    <div class="container">
+      <h1>Digital Garden</h1>
+      <p>Type a word and press Enter to grow a new plant.</p>
+      <input type="text" id="wordInput" placeholder="Type here...">
+      <p id="statusMessage"></p>
     
+      <div id="hintBox">
+        <p><strong>🌱 Plant options:</strong></p>
+        <ul>
+          <li><code>daisy</code></li>
+          <li><code>rose</code></li>
+          <li><code>sunflower</code></li>
+          <li><code>tomato</code></li>
+          <li><code>carrot</code></li>
+          <li><code>lettuce</code></li>
+          <li><code>corn</code></li>
+          <li><code>watermelon</code></li>
+          <li><code>pumpkin</code></li>
+        </ul>
+      </div>
 
-    <button id="resetButton">Reset Garden</button>
+      <button id="resetButton">Reset Garden</button>
+    </div>
 
-  </div>
+    <section class="plot-grid" id="plotGrid">
+      <div class="plot" data-index="0"></div>
+      <div class="plot" data-index="1"></div>
+      <div class="plot" data-index="2"></div>
+      <div class="plot" data-index="3"></div>
+      <div class="plot" data-index="4"></div>
+      <div class="plot" data-index="5"></div>
+      <div class="plot" data-index="6"></div>
+      <div class="plot" data-index="7"></div>
+      <div class="plot" data-index="8"></div>
+    </section>
+  </main>
 
-  <section class="plot-grid" id="plotGrid">
-    <div class="plot" data-index="0"></div>
-    <div class="plot" data-index="1"></div>
-    <div class="plot" data-index="2"></div>
-    <div class="plot" data-index="3"></div>
-    <div class="plot" data-index="4"></div>
-    <div class="plot" data-index="5"></div>
-    <div class="plot" data-index="6"></div>
-    <div class="plot" data-index="7"></div>
-    <div class="plot" data-index="8"></div>
-  </section>
-  
-</main>
-
-  
   <footer class="site-footer">
     <p>🌸 Built with love by <strong>Teshi</strong></p>
     <div class="footer-links">
       <a href="https://github.com/teshidesu" target="_blank" aria-label="GitHub" title="GitHub">
-        <img src="/assets/image/github-mark.png" alt="GitHub logo" />
+        <img src="assets/image/github-mark.png" alt="GitHub logo" />
       </a>
       <a href="https://twitter.com/teshidesu23" target="_blank" aria-label="Twitter" title="Twitter">
-        <img src="/assets/image/x.png" alt="Twitter logo" />
+        <img src="assets/image/x.png" alt="Twitter logo" />
       </a>
       <a href="https://www.codedex.io/@teshi-desu" target="_blank" aria-label="Codedex" title="Codedex">
-        <img src="/assets/image/pot2.png" alt="Codedex logo" />
+        <img src="assets/image/pot2.png" alt="Codedex logo" />
       </a>
     </div>
   </footer>
-  
-  
 
-  <!-- Sketch (p5.js) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
   <script src="js/sketch.js"></script>
+  
 </body>
 </html>
