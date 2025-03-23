@@ -1,29 +1,49 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(to top, #a9dfbf 60%, #cceeff 100%);
-    display: flex;
-    align-items: center;       /* Centrado horizontal */
-    justify-content: flex-start; /* Alineado arriba */
-    flex-direction: column;
-    position: relative;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(../assets/image/rose.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto; /* Mantiene ancho completo pero no deforma vertical */
+  background-position: center top;
+  image-rendering: pixelated;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.background-pixel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+
   
   .container {
-    position: relative;
+    position: fixed;
+    top: 20px;
+    left: 20px;
     z-index: 10;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px 40px;
-    margin-top: 40px;
+    padding: 20px 30px;
     border-radius: 16px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    max-width: 90%;
-    text-align: center;
+    text-align: left;
+    max-width: 300px;
   }
+  
   
   /* Input */
   input {
@@ -88,5 +108,12 @@ body {
     right: 60px;
     width: 48px;
     z-index: 3;
+  }
+  
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
   }
   
