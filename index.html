@@ -9,7 +9,7 @@
 <body>
   <!-- Música de fondo -->
   <audio id="backgroundMusic" autoplay loop>
-    <source src="assets/sounds/nature.mp3" type="audio/mpeg" />
+    <source src="/assets/sounds/nature.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
   </audio>
 
@@ -19,20 +19,29 @@
   <img src="assets/image/rose.png" class="background-pixel" alt="background pixel" />
 
 
-  <!-- Estanque animado
-  <img src="assets/image/agua.gif" class="agua" alt="Agua animada" /> -->
-
-  <!-- Sprites decorativos -->
-  <!-- <img src="assets/image/Sprite-0002.gif" class="decor1" alt="Decoración 1" />
-  <img src="assets/image/Sprite-0003.gif" class="decor2" alt="Decoración 2" /> -->
-
-  <!-- Contenido principal -->
   <div class="container">
     <h1>Digital Garden</h1>
     <p>Type a word and press Enter to grow a new plant.</p>
-    <input type="text" id="wordInput" placeholder="Type here..." />
+    <input type="text" id="wordInput" placeholder="Type here...">
     <p id="statusMessage"></p>
+  
+    <!-- Esto debe estar aquí dentro -->
+    <div id="hintBox">
+      <p><strong>🌱 Plant options:</strong></p>
+      <ul>
+        <li><code>daisy</code></li>
+        <li><code>rose</code></li>
+        <li><code>tulip</code></li>
+        <li><code>violet</code></li>
+        <li><code>sunflower</code></li>
+      </ul>
+    </div>
+
+    <button id="resetButton">Reset Garden</button>
+
   </div>
+  
+  
 
   <!-- Sketch (p5.js) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>

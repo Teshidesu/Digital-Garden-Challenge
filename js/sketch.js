@@ -1,10 +1,31 @@
 let plots = [];
 let currentPlot = 0;
 
+let flowerImages = {};
+let flowerMap = {
+  daisy: "Daisy-flower2.png",
+  rose: "rose2.png",
+  sunflower: "sunflower2.png",
+  tulip: "tulip-flower2.png",
+  violet: "violet-flower2.png"
+};
+
+let soilTexture;
+
+function preload() {
+  // Cargar todas las flores
+  for (let key in flowerMap) {
+    flowerImages[key] = loadImage(`../assets/image/${flowerMap[key]}`);
+  }
+
+  // Cargar la textura de tierra
+  soilTexture = loadImage("../assets/image/tierra8.png");
+}
+
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
-  canvas.style('z-index', '0'); // Detrás de las capas visuales
+  canvas.style('z-index', '0');
   initPlots();
 
   let input = document.getElementById("wordInput");
@@ -40,7 +61,7 @@ function initPlots() {
   const totalWidth = cols * plotSize + (cols - 1) * margin;
   const totalHeight = rows * plotSize + (rows - 1) * margin;
 
-  const startX = width / 2 - totalWidth / 2 + 80;  // ← Esto lo ajustaste antes
+  const startX = width / 2 - totalWidth / 2 + 80;
   const startY = windowHeight / 2 - totalHeight / 2 + 50;
 
   for (let y = 0; y < rows; y++) {
@@ -52,42 +73,58 @@ function initPlots() {
   }
 }
 
-
-
 class Plot {
   constructor(x, y, size) {
     this.x = x;
     this.y = y;
     this.size = size;
     this.hasPlant = false;
-    this.color = null;
+    this.image = null;
     this.word = '';
   }
 
   plant(word) {
     this.hasPlant = true;
-    this.word = word;
-    this.color = colorFromWord(word);
+    this.word = word.toLowerCase();
+
+    if (flowerImages[this.word]) {
+      this.image = flowerImages[this.word];
+    } else {
+      this.image = null;
+    }
   }
 
   display() {
-    fill(139, 69, 19); // tierra
-    stroke(100);
-    rect(this.x, this.y, this.size, this.size, 8);
-
+    if (soilTexture) {
+      image(soilTexture, this.x, this.y, this.size, this.size);
+    } else {
+      fill(139, 69, 19); // fallback si no carga la imagen
+      stroke(100);
+      rect(this.x, this.y, this.size, this.size, 8);
+    }
+  
     if (this.hasPlant) {
-      fill(this.color);
-      noStroke();
-      ellipse(
-        this.x + this.size / 2,
-        this.y + this.size / 2,
-        this.size / 2,
-        this.size * 0.6
-      );
+      if (this.image) {
+        image(
+          this.image,
+          this.x + this.size / 2 - 16,
+          this.y + this.size / 2 - 16,
+          32,
+          32
+        );
+      } else {
+        fill(colorFromWord(this.word));
+        noStroke();
+        ellipse(
+          this.x + this.size / 2,
+          this.y + this.size / 2,
+          this.size / 2,
+          this.size * 0.6
+        );
+      }
     }
   }
-}
-
+ }  
 
 function colorFromWord(word) {
   let hash = 0;
@@ -97,3 +134,9 @@ function colorFromWord(word) {
   return color(hash % 255, (hash * 2) % 255, (hash * 3) % 255);
 }
 
+let resetBtn = document.getElementById("resetButton");
+resetBtn.addEventListener("click", () => {
+  plots = [];
+  currentPlot = 0;
+  initPlots(); // volver a crear los plots
+});
