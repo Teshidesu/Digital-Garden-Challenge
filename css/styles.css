@@ -1,28 +1,90 @@
+@font-face {
+  font-family: 'PixelifySans';
+  src: url('../assets/static/PixelifySans-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'PixelifySans';
+  src: url('../assets/static/PixelifySans-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'PixelifySans';
+  src: url('../assets/static/PixelifySans-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'PixelifySans';
+  src: url('../assets/static/PixelifySans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(to top, #a9dfbf 60%, #cceeff 100%);
-    display: flex;
-    align-items: center;       /* Centrado horizontal */
-    justify-content: flex-start; /* Alineado arriba */
-    flex-direction: column;
-    position: relative;
-  }
-  
-  
+  font-family: 'PixelifySans', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(../assets/image/rose.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto; /* Mantiene ancho completo pero no deforma vertical */
+  background-position: center top;
+  image-rendering: pixelated;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.background-pixel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
   .container {
-    position: relative;
+    position: fixed;
+    top: 20px;
+    left: 20px;
     z-index: 10;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px 40px;
-    margin-top: 40px;
+    padding: 20px 30px;
     border-radius: 16px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    max-width: 90%;
+    text-align: left;
+    max-width: 300px;
     text-align: center;
+  }
+
+  .container h1 {
+    font-family: 'PixelifySans', sans-serif;
+    font-weight: bold;
+    color: #297a0b;
+  }
+
+  .container p {
+    color: #147a0b;
+  }
+
+  .container ul li {
+    font-family: 'PixelifySans', sans-serif;
+    font-weight: 500;
+  }
+    
+  code {
+    font-family: 'PixelifySans', sans-serif;
   }
   
   /* Input */
@@ -35,6 +97,7 @@ body {
     outline: none;
     transition: 0.3s;
     margin-top: 10px;
+    font-family: 'PixelifySans', sans-serif;
   }
   
   input:focus {
@@ -88,5 +151,69 @@ body {
     right: 60px;
     width: 48px;
     z-index: 3;
+  }
+  
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+
+  #hintBox {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #2c5e1a;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  #hintBox ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0;
+  }
+
+  #hintBox p {
+    font-family: 'PixelifySans', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  #hintBox li {
+    font-family: 'PixelifySans', sans-serif;
+    font-weight: 500;
+  }
+  
+  #hintBox li {
+    display: inline-block;
+    margin: 3px 6px;
+    background: #eaf7dc;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: monospace;
+    color: #7c2833;
+  }
+  
+
+  #resetButton {
+    margin-top: 12px;
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: #d9f3d8;
+    color: #2c5e1a;
+    border: 2px solid #82cc82;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-family: 'PixelifySans', sans-serif;
+  }
+  
+  #resetButton:hover {
+    background-color: #d0ebc4;
   }
   
