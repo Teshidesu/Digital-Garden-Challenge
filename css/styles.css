@@ -141,12 +141,20 @@ input:focus {
 #hintBox li {
   display: inline-block;
   margin: 4px 6px;
-  background: #eaf7dc;
   padding: 4px 8px;
   border-radius: 6px;
   font-family: monospace;
   color: #7c2833;
   font-size: 0.875rem;
+  animation: pastelCycle 6s infinite ease-in-out;
+}
+
+@keyframes pastelCycle {
+  0%   { background-color: #eaf7dc; }   /* pastel green */
+  25%  { background-color: #fcefe3; }   /* pastel peach */
+  50%  { background-color: #e3f1fc; }   /* pastel blue */
+  75%  { background-color: #fbe3f1; }   /* pastel pink */
+  100% { background-color: #eaf7dc; }   /* back to start */
 }
 
 /* -----------------------------------
@@ -163,6 +171,7 @@ input:focus {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  
 }
 
 #resetButton:hover {
@@ -209,7 +218,7 @@ input:focus {
    FOOTER
 ------------------------------------ */
 .site-footer {
-  width: 100%;
+  width: 40%;
   text-align: center;
   padding: 0.5rem 0.5rem;
   color: #2c5e1a;
