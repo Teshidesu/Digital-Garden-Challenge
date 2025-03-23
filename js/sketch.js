@@ -83,7 +83,9 @@ function setup() {
 
   if (input) {
     input.addEventListener("keypress", function (event) {
-      const word = input.value.trim().toLowerCase();
+      let word = input.value.trim().toLowerCase();
+      word = aliasMap[word] || word;
+
       const flowerFile = flowerMap[word];
 
       if (event.key === "Enter") {
@@ -117,13 +119,24 @@ function setup() {
 
   if (resetBtn) {
     resetBtn.addEventListener("click", () => {
-      allPlots.forEach(plot => plot.innerHTML = "");
+      allPlots.forEach(plot => (plot.innerHTML = ""));
       currentPlot = 0;
       statusMessage.textContent = "🌿 Garden reset!";
       setTimeout(() => (statusMessage.textContent = ""), 1500);
     });
   }
+
+  // 👇 Activar audio tras cualquier clic
+  document.addEventListener("click", () => {
+    const audio = document.getElementById("backgroundMusic");
+    if (audio && audio.paused) {
+      audio.play().catch(err => {
+        console.warn("Audio autoplay failed:", err);
+      });
+    }
+  });
 }
+
 
 
 function draw() {
