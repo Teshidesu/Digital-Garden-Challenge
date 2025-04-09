@@ -5,7 +5,15 @@ This project is built using HTML, CSS, and JavaScript, and represents my unique 
 
 ---
 
-## 🌿 Project Overview
+### 🏆 Recognition
+
+I'm proud to share that this project won **2nd Place** 🥈 in the **Codédex Digital Garden Challenge**!  
+Out of many incredible entries, my interactive pixel-art garden stood out for its creativity, execution, and calming experience.
+
+Big thanks to the Codédex community for the support and inspiration 🌱✨
+
+
+### 🌿 Project Overview
 
 As spring approaches, I wanted to create a digital space that celebrates new beginnings, mindfulness, and creativity.  
 My project is an **interactive pixel-art garden** where users can type a word and "plant" it — watching it bloom into a unique flower. Each word is tied to a specific plant species, and the background includes relaxing visual and ambient elements for a peaceful experience.
