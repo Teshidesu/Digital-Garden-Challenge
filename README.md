@@ -12,7 +12,6 @@ Out of many incredible entries, my interactive pixel-art garden stood out for it
 
 Big thanks to the Codédex community for the support and inspiration 🌱✨
 
-
 ### 🌿 Project Overview
 
 As spring approaches, I wanted to create a digital space that celebrates new beginnings, mindfulness, and creativity.  
