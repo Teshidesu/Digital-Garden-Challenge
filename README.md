@@ -3,6 +3,7 @@
 Welcome to my **Digital Garden** project for the **Codédex Monthly Challenge**! 🎉  
 This project is built using HTML, CSS, and JavaScript, and represents my unique interpretation of a *digital garden*.
 
+### [Click here for a better exp!](https://teshi-digital-garden.netlify.app/)
 ---
 
 ### 🏆 Recognition
@@ -59,5 +60,6 @@ open index.html
 ```
 
 This project is free of copyright restrictions.
+
 
 
